@@ -1,6 +1,6 @@
+
+
 vim.cmd("set mouse=a")
-
-
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")

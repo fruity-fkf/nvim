@@ -1,4 +1,9 @@
 vim.g.mapleader = " "
+--vim.api.nvim_set_keymap("n", "<leader>", "", {})
+
+vim.api.nvim_set_keymap("n", "<leader>Tf", ":ToggleTerm direction =float", {})
+vim.api.nvim_set_keymap("n", "<leader>Tv", ":ToggleTerm direction =vertical", {})
+vim.api.nvim_set_keymap("n", "<leader>Th", ":ToggleTerm direction =horizontal", {})
 
 vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })

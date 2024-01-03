@@ -1,3 +1,4 @@
+vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 vim.api.nvim_set_option("clipboard", "unnamed")
 vim.cmd("set mouse=a")
 vim.cmd("set guifont=JetBrainsMonoNerd:h6")

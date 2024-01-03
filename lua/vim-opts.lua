@@ -1,5 +1,5 @@
 
-
+vim.api.nvim_set_option("clipboard","unnamed")
 vim.cmd("set mouse=a")
 
 vim.cmd("set expandtab")

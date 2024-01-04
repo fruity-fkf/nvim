@@ -1,6 +1,8 @@
 vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 vim.api.nvim_set_option("clipboard", "unnamed")
 vim.cmd("set mouse=a")
+vim.cmd("set undodir=~/.local/tmp")
+vim.cmd("set undofile")
 vim.cmd("set guifont=JetBrainsMonoNerd:h6")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")

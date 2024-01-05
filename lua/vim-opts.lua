@@ -3,12 +3,13 @@ vim.api.nvim_set_option("clipboard", "unnamed")
 vim.cmd("set mouse=a")
 vim.cmd("set undodir=~/.local/tmp")
 vim.cmd("set undofile")
-vim.cmd("set guifont=JetBrainsMonoNerd:h6")
+vim.cmd("set guifont=Hack:h9")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
+
 
 -- Navigate vim panes better
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")

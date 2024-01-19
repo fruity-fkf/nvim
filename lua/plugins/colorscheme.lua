@@ -1,4 +1,13 @@
 return {
+	{ "LunarVim/Colorschemes" },
+	{ "sainnhe/edge" },
+	{ "navarasu/onedark.nvim" },
+	{ "shaunsingh/nord.nvim" },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+	},
+
 	{
 		"rebelot/kanagawa.nvim",
 	},
@@ -7,7 +16,7 @@ return {
 		"sainnhe/gruvbox-material",
 
 		config = function()
-			gruvbox_material_background = "soft"
+			local gruvbox_material_background = "soft"
 		end,
 	},
 
@@ -23,5 +32,12 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function() end,
+	},
+
+	{
+		"andrew-george/telescope-themes",
+		config = function()
+			require("telescope").load_extension("themes")
+		end,
 	},
 }

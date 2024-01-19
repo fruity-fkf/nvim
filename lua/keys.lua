@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 --vim.keymap.set("n", "<leader>", "", {})
 vim.keymap.set("n", "<leader>rn", ":RnvimrToggle<CR>", {})
 vim.keymap.set("n", "<leader>mm", ":MinimapToggle<CR>", {})
+vim.keymap.set("n", "<leader>th", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
 	desc = "Toggle Spectre",

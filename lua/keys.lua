@@ -39,3 +39,17 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>ff", ":Telescope live_grep<CR>", {})
 vim.keymap.set("n", "<leader>fg", ":Telescope find_files<CR>", {})
+
+vim.keymap.set("n", "<C-e>", function()
+	toggle_telescope(harpoon:list())
+end, { desc = "Open harpoon window" })
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-S-P>", function()
+	harpoon:list():prev()
+end)
+vim.keymap.set("n", "<C-S-N>", function()
+	harpoon:list():next()
+end)
+
+vim.keymap.set("n", "<leader>u", ":Telescope undo<cr>")

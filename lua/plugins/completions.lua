@@ -18,7 +18,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		lazy = false,
-		dependencies = { "hrsh7th/cmp-path" },
+		dependencies = { "hrsh7th/cmp-path", "mtoohey31/cmp-fish" },
 		config = function()
 			local cmp = require("cmp")
 			cmp.setup({
@@ -32,6 +32,8 @@ return {
 					end,
 				},
 				mapping = cmp.mapping.preset.insert({
+					["<C-p>"] = cmp.mapping.select_prev_item(),
+					["<C-n>"] = cmp.mapping.select_next_item(),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
@@ -42,10 +44,43 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "luasnip" },
-				}, {
 					{ name = "buffer" },
+					{ name = "fish" },
 				}),
 			})
 		end,
+	},
+
+	{
+		"garymjr/nvim-snippets",
+		opts = {
+			friendly_snippets = true,
+			global_snippets = { "all", "global" },
+		},
+		dependencies = { "rafamadriz/friendly-snippets" },
+	},
+
+	{
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
+		opts = {
+			mappings = {
+				["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\`].", register = { cr = false } },
+			},
+		},
+		keys = {
+			{
+				"<leader>up",
+				function()
+					vim.g.minipairs_disable = not vim.g.minipairs_disable
+					if vim.g.minipairs_disable then
+						LazyVim.warn("Disabled auto pairs", { title = "Option" })
+					else
+						LazyVim.info("Enabled auto pairs", { title = "Option" })
+					end
+				end,
+				desc = "Toggle Auto Pairs",
+			},
+		},
 	},
 }

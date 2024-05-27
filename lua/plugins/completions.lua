@@ -10,7 +10,16 @@ return {
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
 	},
+
+	{ "chrisgrieser/cmp-nerdfont", lazy = false },
+
 	{
+		"hrsh7th/cmp-emoji",
+		lazy = false,
+	},
+
+	{
+
 		"hrsh7th/cmp-nvim-lsp",
 		lazy = false,
 		config = true,
@@ -42,10 +51,14 @@ return {
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "path" },
 					{ name = "luasnip" },
+					{ name = "path" },
 					{ name = "buffer" },
+
+					{ name = "obsidian.nvim" },
 					{ name = "fish" },
+					{ name = "emoji" },
+					{ name = "nerdfont" },
 				}),
 			})
 		end,

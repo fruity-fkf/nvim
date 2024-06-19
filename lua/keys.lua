@@ -7,30 +7,6 @@ local split_sensibly = function()
   end
 end
 
--- require('mini.pick') Colorscheme Picker
-local set_colorscheme = function(name) pcall(vim.cmd, 'colorscheme ' .. name) end
-local pick_colorscheme = function()
-  local init_scheme = vim.g.colors_name
-  local new_scheme = require('mini.pick').start({
-    source = {
-      items = vim.fn.getcompletion("", "color"),
-      preview = function(_, item)
-        set_colorscheme(item)
-      end,
-      choose = set_colorscheme
-    },
-    mappings = {
-      preview = {
-        char = '<C-p>',
-        func = function()
-          local item = require('mini.pick').get_picker_matches()
-          pcall(vim.cmd, 'colorscheme ' .. item.current)
-        end
-      }
-    }
-  })
-  if new_scheme == nil then set_colorscheme(init_scheme) end
-end
 
 
 
@@ -39,34 +15,22 @@ end
 
 
 
---vim.keymap.set("n", "<leader>", "", {})
-vim.keymap.set("n", "<leader>rn", ":RnvimrToggle<CR>", {})
-vim.keymap.set("n", "<leader>mm", ":MinimapToggle<CR>", {})
+
 vim.keymap.set("n", "<leader>th", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
-vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
-  desc = "Toggle Spectre",
-})
-vim.keymap.set("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-  desc = "Search current word",
-})
-vim.keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-  desc = "Search current word",
-})
-vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-  desc = "Search on current file",
-})
+
+
+
+
+
 
 -- terminal
 
-vim.keymap.set("n", "<leader>Tf", ":ToggleTerm direction =float<CR>", {})
-vim.keymap.set("n", "<leader>Tv", ":ToggleTerm direction =vertical<CR>", {})
-vim.keymap.set("n", "<leader>Th", ":ToggleTerm direction =horizontal<CR>", {})
+vim.keymap.set("n", "<leader>Tf", ":ToggleTerm direction =float<CR>", { desc = 'Terminal(Float)' })
+vim.keymap.set("n", "<leader>Tv", ":ToggleTerm direction =vertical<CR>", { desc = 'Terminal(Vertical)' })
+vim.keymap.set("n", "<leader>Th", ":ToggleTerm direction =horizontal<CR>", { desc = 'Terminal(Horizontal)' })
 
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { noremap = true })
+
 -- move current tab to previous position
 vim.keymap.set("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
@@ -81,9 +45,9 @@ local keymap = vim.keymap.set
 
 
 
--- ╔══════════════════════╗
+-- ╔══════════════════════════════╗
 -- ║    Buffer and Tab Keymaps    ║
--- ╚══════════════════════╝
+-- ╚══════════════════════════════╝
 keymap("n", "<leader>bd", "<cmd>bd<cr>", { noremap = true, silent = true, desc = 'Close Buffer' })
 keymap("n", "<leader>bq", "<cmd>%bd|e#<cr>", { noremap = true, silent = true, desc = 'Close other Buffers' })
 keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = 'Next Buffer' })
@@ -100,6 +64,7 @@ end
 
 keymap("n", "<leader>tn", function() vim.lsp.buf.code_action() end, { noremap = true, silent = true, desc = 'New Tab' })
 
+keymap("n", "<leader>tc", function() vim.lsp.buf.code_action() end, { noremap = true, silent = true, desc = 'Close Tab' })
 
 
 
@@ -118,6 +83,20 @@ keymap("n", "<leader>la", function() vim.lsp.buf.code_action() end,
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 -- keymap("n", "<leader>la", function() vim.lsp.buf.code_action() end,{ noremap = true, silent = true, desc = '' })
+
+
+
+
+
+-- TABS
+
+
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { noremap = true, desc = 'Tab Close' })
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { noremap = true, desc = 'Tab Only' })
+vim.keymap.set("n", "<leader>tN", ":tabnew<CR>", { noremap = true, desc = 'Tab New' })
+vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { noremap = true, desc = 'Tab Previous' })
+
+vim.keymap.set("n", "<leader>tn", ":tabNext<CR>", { noremap = true, desc = 'Tab Next' })
 
 
 
@@ -162,7 +141,6 @@ keymap("n", "<leader>bs", split_sensibly, { noremap = true, silent = true, desc 
 -- Change Colorscheme
 keymap("n", "<leader>ud", "<cmd>set background=dark<cr>", { noremap = true, silent = true, desc = 'Dark Background' })
 keymap("n", "<leader>ub", "<cmd>set background=light<cr>", { noremap = true, silent = true, desc = 'Light Background' })
-keymap("n", "<leader>um", "<cmd>lua MiniMap.open()<cr>", { noremap = true, silent = true, desc = 'Mini Map' })
 
 
 

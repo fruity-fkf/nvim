@@ -7,6 +7,13 @@ return {
       require('mini.comment').setup()
       require('mini.basics').setup()
       require('mini.files').setup()
+      require('mini.git').setup()
+      require('mini.extra').setup()
+
+
+
+
+
 
 
 
@@ -63,6 +70,9 @@ return {
           { mode = 'n', keys = '<Leader>s', desc = '󰆓 Session' },
           { mode = 'n', keys = '<Leader>u', desc = '󰔃 UI' },
           { mode = 'n', keys = '<Leader>w', desc = ' Window' },
+
+          { mode = 'n', keys = '<Leader>T', desc = ' Terminal' },
+          { mode = 'n', keys = '<Leader>t', desc = '󰝜 Tabs' },
         },
       })
     end

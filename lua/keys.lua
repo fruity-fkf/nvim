@@ -124,7 +124,7 @@ keymap("n", "<leader>n", "<cmd>noh<cr>", { noremap = true, silent = true, desc =
 keymap("n", "<leader>bs", split_sensibly, { noremap = true, silent = true, desc = "Alternate buffers" })
 
 
-
+vim.keymap.set("n", "<leader>wth", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 
 

@@ -9,9 +9,8 @@ return {
       require('mini.files').setup()
       require('mini.git').setup()
       require('mini.extra').setup()
-
-
-
+      require('mini.pairs').setup()
+      require('mini.surround').setup()
 
 
 

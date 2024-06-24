@@ -36,9 +36,10 @@ vim.keymap.set("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 vim.keymap.set("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
 
-vim.keymap.set("n", "<leader>fo", ":lua MiniFiles.open()<CR>", {})
+vim.keymap.set("n", "<leader>ft", ":Neotree toggle<CR>", { desc = "File Tree" })
 
-vim.keymap.set("n", "<leader>fc", ":lua MiniFiles.close()<CR>", {})
+vim.keymap.set("n", "<leader>fm", ":lua MiniFiles.open()<CR>", { desc = "Mini.nvim file manager" })
+
 
 
 local keymap = vim.keymap.set

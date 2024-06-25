@@ -12,13 +12,21 @@ return {
     "rebelot/kanagawa.nvim",
   },
 
-  {
-    "sainnhe/gruvbox-material",
 
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
     config = function()
-      local gruvbox_material_background = "soft"
-    end,
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_background = "hard"
+    end
   },
+
+
+
+
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,

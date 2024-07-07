@@ -11,19 +11,6 @@ end
 
 
 
-
-
-
-
-
-vim.keymap.set("n", "<leader>th", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
-
-
-
-
-
-
-
 -- terminal
 
 vim.keymap.set("n", "<leader>Tf", ":ToggleTerm direction =float<CR>", { desc = 'Terminal(Float)' })
@@ -125,13 +112,6 @@ keymap("n", "<leader>n", "<cmd>noh<cr>", { noremap = true, silent = true, desc =
 keymap("n", "<leader>bs", split_sensibly, { noremap = true, silent = true, desc = "Alternate buffers" })
 
 
-vim.keymap.set("n", "<leader>wth", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
-
-
-
-
-
-
 keymap("n", "<leader>wq", "<cmd>wincmd q<cr>", { noremap = true, silent = true, desc = 'Close Window' })
 keymap("n", "<leader>n", "<cmd>noh<cr>", { noremap = true, silent = true, desc = 'Clear Search Highlight' })
 
@@ -142,16 +122,7 @@ keymap("n", "<leader>bs", split_sensibly, { noremap = true, silent = true, desc 
 -- Change Colorscheme
 keymap("n", "<leader>ud", "<cmd>set background=dark<cr>", { noremap = true, silent = true, desc = 'Dark Background' })
 keymap("n", "<leader>ub", "<cmd>set background=light<cr>", { noremap = true, silent = true, desc = 'Light Background' })
-
-
-
-
-
-
-
-
-
-
+vim.keymap.set("n", "<leader>wth", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 
 

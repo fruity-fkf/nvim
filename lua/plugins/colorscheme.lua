@@ -1,5 +1,11 @@
 return {
   { "LunarVim/Colorschemes" },
+
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   { "sainnhe/edge" },
   { "navarasu/onedark.nvim" },
   { "shaunsingh/nord.nvim" },

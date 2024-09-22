@@ -32,15 +32,7 @@ keymap("n", "<leader>bq", "<cmd>%bd|e#<cr>", { noremap = true, silent = true, de
 keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
--- Format Buffer
--- With and without LSP
-if vim.tbl_isempty(vim.lsp.get_clients()) then
-	keymap("n", "<leader>bf", function()
-		vim.lsp.buf.format()
-	end, { noremap = true, silent = true, desc = "Format Buffer" })
-else
-	keymap("n", "<leader>bf", "gg=G<C-o>", { noremap = true, silent = true, desc = "Format Buffer" })
-end
+
 
 keymap("n", "<leader>tn", function()
 	vim.lsp.buf.code_action()

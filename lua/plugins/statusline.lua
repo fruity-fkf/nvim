@@ -17,7 +17,6 @@ return {
 				globalstatus = false,
 				refresh = {
 					statusline = 1000,
-					tabline = 1000,
 					winbar = 1000,
 				},
 			},
@@ -37,9 +36,6 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {},
-			winbar = {},
-			inactive_winbar = {},
 			extensions = {},
 		})
 	end,

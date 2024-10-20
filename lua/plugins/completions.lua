@@ -1,115 +1,141 @@
+-- configure autocomplete
 return {
-  {
-    "L3MON4D3/LuaSnip",
-    lazy = false,
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    config = function()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end,
-  },
+	"hrsh7th/nvim-cmp",
+	event = { "InsertEnter", "CmdlineEnter" },
+	dependencies = {
+		-- autocomplete plugins
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-nvim-lua",
+		"saadparwaiz1/cmp_luasnip",
+		"chrisgrieser/cmp-nerdfont",
+		"hrsh7th/cmp-emoji",
+		"mtoohey31/cmp-fish",
 
-  { "chrisgrieser/cmp-nerdfont", lazy = false },
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "hrsh7th/cmp-calc",
 
-  {
-    "hrsh7th/cmp-emoji",
-    lazy = false,
-  },
+		-- vscode like icons to autocomplete list
+		"onsails/lspkind.nvim",
+		-- snippet plugin
+		"L3MON4D3/LuaSnip",
 
-  {
+		{
+			"garymjr/nvim-snippets",
+			opts = {
+				friendly_snippets = true,
+			},
+			dependencies = { "rafamadriz/friendly-snippets" },
+		},
+	},
+	config = function()
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
+		require("luasnip/loaders/from_vscode").lazy_load()
+		local lspkind = require("lspkind")
 
-    "hrsh7th/cmp-nvim-lsp",
-    lazy = false,
-    config = true,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    lazy = false,
-    dependencies = { "hrsh7th/cmp-path", "mtoohey31/cmp-fish" },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        window = {
-          documentation = cmp.config.window.bordered(),
-          completion = cmp.config.window.bordered(),
-        },
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-p>"] = cmp.mapping.select_prev_item(),
-          ["<C-n>"] = cmp.mapping.select_next_item(),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "path" },
-          { name = "buffer" },
+		cmp.setup({
+			auto_brackets = {}, -- configure any filetype to auto add brackets
+			performance = {
+				debounce = 0, -- default is 60ms
+				throttle = 0, -- default is 30ms
+			},
+			completion = {
+				keyword_length = 1,
+				completeopt = "menu,menuone,noselect",
+			},
+			formatting = {
+				expandable_indicator = true,
+				fields = {
+					"abbr",
+					"kind",
+					"menu",
+				},
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					maxwidth = 65,
+					-- ellipsis_char = "...",
+					show_labelDetails = false,
+					before = function(entry, item)
+						item.menu = ""
+						return item
+					end,
+				}),
+			},
+			snippet = { -- configure how nvim-cmp interacts with snippet engine
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end,
+			},
+			mapping = {
+				-- WARNING: working state
 
-          { name = "obsidian.nvim" },
-          { name = "fish" },
-          { name = "emoji" },
-          { name = "nerdfont" },
-        }),
-      })
-    end,
-  },
+				-- WARNING: THIS IS WORKING DO NOT TOUCH THIS MF
 
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.expand_or_jumpable() then
+						luasnip.expand_or_jump()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif luasnip.jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
 
-  {
-    "garymjr/nvim-snippets",
-    keys = {
-      {
-        "<Tab>",
-        function()
-          if vim.snippet.active({ direction = 1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(1)
-            end)
-            return
-          end
-          return "<Tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-      {
-        "<Tab>",
-        function()
-          vim.schedule(function()
-            vim.snippet.jump(1)
-          end)
-        end,
-        expr = true,
-        silent = true,
-        mode = "s",
-      },
-      {
-        "<S-Tab>",
-        function()
-          if vim.snippet.active({ direction = -1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(-1)
-            end)
-            return
-          end
-          return "<S-Tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = { "i", "s" },
-      },
-    },
-  },
+				-- ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+				-- ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+				["<C-k>"] = cmp.mapping.scroll_docs(-4),
+				["<C-j>"] = cmp.mapping.scroll_docs(4),
+				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+				["<C-e>"] = cmp.mapping.abort(), -- close completion window
+				["<Esc>"] = cmp.mapping.close(),
+				["<CR>"] = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Insert,
+					select = true,
+				}),
+			},
+			-- `/` cmdline setup.
+			cmp.setup.cmdline({ "/", "?" }, {
+				completion = { completeopt = "menu,menuone,noselect" },
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			}),
+			-- `:` cmdline setup.
+			cmp.setup.cmdline(":", {
+				completion = { completeopt = "menu,menuone,noselect" },
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources(
+					{ { name = "path" } },
+					{ { name = "cmdline", option = { ignore_cmds = { "Man", "!" } } } }
+				),
+			}),
+			-- sources for autocompletion
+			sources = {
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" }, -- snippets
+				{ name = "buffer" }, -- text within current buffer
+				{ name = "path" }, -- file system paths
+				{ name = "supermaven" },
+				{ name = "fish" },
+				{ name = "emoji" },
+				{ name = "nerdfont" },
 
+				-- { name = "nvim_lsp_signature_help" },
+				-- { name = "calc" }, --for maths calculations
+			},
+		})
+	end,
 }

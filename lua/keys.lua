@@ -22,6 +22,10 @@ vim.keymap.set("n", "<leader>ft", ":Neotree toggle<CR>", { desc = "File Tree" })
 
 vim.keymap.set("n", "<leader>fm", ":lua MiniFiles.open()<CR>", { desc = "Mini.nvim file manager" })
 
+vim.keymap.set("n", "<leader>fz", ":Rg<CR>", { desc = "Fuzzy Find (fzf)" })
+
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find File (telescope)" })
+
 local keymap = vim.keymap.set
 
 -- ╔══════════════════════════════╗
@@ -32,7 +36,6 @@ keymap("n", "<leader>bq", "<cmd>%bd|e#<cr>", { noremap = true, silent = true, de
 keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
-
 
 keymap("n", "<leader>tn", function()
 	vim.lsp.buf.code_action()

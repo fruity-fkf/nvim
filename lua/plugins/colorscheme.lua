@@ -1,6 +1,5 @@
 return {
-	{ "LunarVim/Colorschemes" },
-
+	{ "RRethy/base16-nvim" },
 	{
 		"scottmckendry/cyberdream.nvim",
 		lazy = false,

@@ -55,7 +55,15 @@ return {
 			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+
+		opts = {
+			transparent_background = true,
+		},
+	},
 	{
 		"LunarVim/Colorschemes",
 	},

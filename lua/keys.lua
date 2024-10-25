@@ -9,9 +9,9 @@ end
 
 -- terminal
 
-vim.keymap.set("n", "<leader>Tf", ":ToggleTerm direction =float<CR>", { desc = "Terminal(Float)" })
-vim.keymap.set("n", "<leader>Tv", ":ToggleTerm direction =vertical<CR>", { desc = "Terminal(Vertical)" })
-vim.keymap.set("n", "<leader>Th", ":ToggleTerm direction =horizontal<CR>", { desc = "Terminal(Horizontal)" })
+vim.keymap.set("n", "<leader>Tf", ":ToggleTerm direction=float<CR>", { desc = "Terminal(Float)" })
+vim.keymap.set("n", "<leader>Tv", ":ToggleTerm direction=vertical<CR>", { desc = "Terminal(Vertical)" })
+vim.keymap.set("n", "<leader>Th", ":ToggleTerm direction=horizontal<CR>", { desc = "Terminal(Horizontal)" })
 
 -- move current tab to previous position
 vim.keymap.set("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })

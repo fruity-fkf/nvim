@@ -37,6 +37,7 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
 
+keymap("n", "<leader>bl", ":Telescope buffers<CR>", { noremap = true, silent = true, desc = "Close other Buffers" })
 keymap("n", "<leader>tn", function()
 	vim.lsp.buf.code_action()
 end, { noremap = true, silent = true, desc = "New Tab" })

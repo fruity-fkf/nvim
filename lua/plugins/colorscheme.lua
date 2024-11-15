@@ -1,4 +1,5 @@
 return {
+
 	{ "RRethy/base16-nvim" },
 	{
 		"scottmckendry/cyberdream.nvim",
@@ -82,4 +83,21 @@ return {
 			require("telescope").load_extension("themes")
 		end,
 	},
+
+	--NOTE This installs  a bunch of shit... use at discresion
+	-- {
+	-- 	"linrongbin16/colorbox.nvim",
+	--
+	-- 	-- don't lazy load
+	-- 	lazy = false,
+	-- 	-- load with highest priority
+	-- 	priority = 1000,
+	--
+	-- 	build = function()
+	-- 		require("colorbox").update()
+	-- 	end,
+	-- 	config = function()
+	-- 		require("colorbox").setup()
+	-- 	end,
+	-- },
 }

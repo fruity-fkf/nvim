@@ -11,7 +11,7 @@ return {
 			require("mini.extra").setup()
 			require("mini.pairs").setup()
 			require("mini.surround").setup()
-			require("mini.indentscope").setup()
+			-- require("mini.indentscope").setup()
 
 			local miniclue = require("mini.clue")
 			miniclue.setup({

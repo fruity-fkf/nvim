@@ -11,6 +11,17 @@ return {
 		},
 	},
 
+	-- there are two notification plugs
+
+	--   CURRENTLY HANDLED VIA SNACKS.NVIM
+
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	opts = {
+	-- 		-- options
+	-- 	},
+	-- },
+	--
 	-- {
 	-- 	"rcarriga/nvim-notify",
 	-- 	keys = {

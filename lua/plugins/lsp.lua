@@ -25,6 +25,9 @@ return {
 			lspconfig.clangd.setup({})
 
 			lspconfig.lua_ls.setup({})
+
+			require("lspconfig").markdown_oxide.setup({})
+			require("lspconfig").marksman.setup({})
 		end,
 	},
 }

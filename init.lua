@@ -14,7 +14,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
-require("current-theme")
 require("lspconfig").nixd.setup({
 	cmd = { "nixd" },
 	settings = {
@@ -36,3 +35,6 @@ require("lspconfig").nixd.setup({
 		},
 	},
 })
+
+require("current-theme")
+vim.cmd("hi BufferLineFill guibg=transparent")

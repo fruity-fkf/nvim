@@ -2,6 +2,10 @@ return {
 
 	-- Lua
 	{ "andweeb/presence.nvim" },
+
+	{ "nvzone/timerly", dependencies = {
+		"nvzone/volt",
+	} },
 	{
 		"folke/zen-mode.nvim",
 		opts = {

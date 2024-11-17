@@ -1,6 +1,6 @@
 return {
 
-	{ "RRethy/base16-nvim" },
+	-- { "RRethy/base16-nvim" },
 	{
 		"scottmckendry/cyberdream.nvim",
 		lazy = false,
@@ -63,6 +63,10 @@ return {
 
 		opts = {
 			transparent_background = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
 		},
 	},
 	{

@@ -50,7 +50,7 @@ end, { noremap = true, silent = true, desc = "Close Tab" })
 -- ║    LSP Keymaps    ║
 -- ╚═══════════════════╝
 
-keymap("n", "<leader>ld", function()
+keymap("n", "<leader>cd", function()
 	vim.lsp.buf.definition()
 end, { noremap = true, silent = true, desc = "Go To Definition" })
 keymap(
@@ -59,10 +59,10 @@ keymap(
 	"<cmd>Pick lsp scope='document_symbol'<cr>",
 	{ noremap = true, silent = true, desc = "Show all Symbols" }
 )
-keymap("n", "<leader>lr", function()
+keymap("n", "<leader>cr", function()
 	vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Rename This" })
-keymap("n", "<leader>la", function()
+keymap("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()
 end, { noremap = true, silent = true, desc = "Code Actions" })
 
@@ -112,4 +112,4 @@ keymap("n", "<leader>ub", "<cmd>set background=light<cr>", { noremap = true, sil
 vim.keymap.set("n", "<leader>wth", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+-- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})

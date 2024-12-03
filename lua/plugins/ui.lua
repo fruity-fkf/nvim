@@ -11,6 +11,41 @@ return {
 		},
 	},
 
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+
+		config = function()
+			local wk = require("which-key")
+			wk.add({
+
+				{ "<leader>c", group = "󰅩 [c]ode" },
+
+				{ "<leader>t", group = "󰓩 [t]abs" },
+
+				{ "<leader>T", group = " [T]erminal" },
+
+				{ "<leader>b", group = "󰈔 [b]uffer" },
+				{ "<leader>f", group = " [f]iles" },
+			})
+		end,
+
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+
 	-- there are two notification plugs
 
 	--   CURRENTLY HANDLED VIA SNACKS.NVIM

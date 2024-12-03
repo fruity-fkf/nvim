@@ -3,6 +3,7 @@ return {
 		"echasnovski/mini.nvim",
 		version = false,
 
+		lazy = true,
 		config = function()
 			require("mini.comment").setup()
 			require("mini.basics").setup()

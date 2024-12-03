@@ -1,7 +1,11 @@
 -- configure autocomplete
 return {
 	"hrsh7th/nvim-cmp",
-	event = { "InsertEnter", "CmdlineEnter" },
+
+	lazy = true,
+	-- This one is more slow but "better"
+	-- event = { "InsertEnter", "CmdlineEnter" },
+	event = { "InsertEnter" },
 	dependencies = {
 		-- autocomplete plugins
 		"hrsh7th/cmp-buffer",
@@ -24,6 +28,8 @@ return {
 
 		{
 			"garymjr/nvim-snippets",
+
+			lazy = true,
 			opts = {
 				friendly_snippets = true,
 			},

@@ -3,11 +3,13 @@ return {
 	-- Lua
 	{ "andweeb/presence.nvim" },
 
-	{ "nvzone/timerly", dependencies = {
+	{ "nvzone/timerly", lazy = true, dependencies = {
 		"nvzone/volt",
 	} },
 	{
 		"folke/zen-mode.nvim",
+
+		lazy = true,
 		opts = {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
@@ -17,6 +19,8 @@ return {
 	{ "nvchad/volt", lazy = true },
 	{
 		"nvchad/minty",
+
+		lazy = true,
 		cmd = { "Shades", "Huefy" },
 	},
 
@@ -32,7 +36,7 @@ return {
 		opts = {},
 	},
 
-	{ "akinsho/toggleterm.nvim", version = "*", opts = {} },
+	{ "akinsho/toggleterm.nvim", lazy = true, version = "*", opts = {} },
 	-- {
 	-- 	"wfxr/minimap.vim",
 	-- 	build = "cargo install --locked code-minimap",

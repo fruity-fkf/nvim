@@ -124,6 +124,7 @@ return {
 
 	{
 		"andrew-george/telescope-themes",
+		lazy = true,
 		config = function()
 			require("telescope").load_extension("themes")
 		end,

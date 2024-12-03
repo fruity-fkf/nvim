@@ -55,7 +55,7 @@ keymap("n", "<leader>cd", function()
 end, { noremap = true, silent = true, desc = "Go To Definition" })
 keymap(
 	"n",
-	"<leader>ls",
+	"<leader>cs",
 	"<cmd>Pick lsp scope='document_symbol'<cr>",
 	{ noremap = true, silent = true, desc = "Show all Symbols" }
 )

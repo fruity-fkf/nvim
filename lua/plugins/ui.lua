@@ -32,6 +32,10 @@ return {
 
 				{ "<leader>b", group = "󰈔 [b]uffer" },
 				{ "<leader>f", group = " [f]iles" },
+
+				{ "<leader>u", group = " [u]niversal" },
+
+				{ "<leader>w", group = "󰖲 [w]incmd/window navigation" },
 			})
 		end,
 

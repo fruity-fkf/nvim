@@ -26,7 +26,7 @@ return {
 
 	{
 		"norcalli/nvim-colorizer.lua",
-    lazy = true;
+		lazy = true,
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -37,7 +37,7 @@ return {
 		opts = {},
 	},
 
-	{ "akinsho/toggleterm.nvim", lazy = true, version = "*", opts = {} },
+	{ "akinsho/toggleterm.nvim", version = "*", opts = {} },
 	-- {
 	-- 	"wfxr/minimap.vim",
 	-- 	build = "cargo install --locked code-minimap",

@@ -3,7 +3,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 
-		lazy = true,
+		-- lazy = true,
 		config = function()
 			require("mason").setup()
 		end,
@@ -12,7 +12,7 @@ return {
 
 		"williamboman/mason-lspconfig.nvim",
 
-		lazy = true,
+		-- lazy = true,
 		config = function()
 			require("mason-lspconfig").setup({})
 		end,
@@ -22,7 +22,7 @@ return {
 
 		"neovim/nvim-lspconfig",
 
-		lazy = true,
+		-- lazy = true,
 		config = function()
 			local lspconfig = require("lspconfig")
 			lspconfig.pyright.setup({})

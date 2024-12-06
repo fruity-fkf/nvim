@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = true,
+	-- lazy = true,
 	opts = {},
 	config = function()
 		vim.api.nvim_create_user_command("Format", function(args)

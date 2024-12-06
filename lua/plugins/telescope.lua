@@ -9,7 +9,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 
-		lazy = true,
 		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -85,7 +84,6 @@ return {
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 
-		lazy = true,
 		config = function()
 			local telescope = require("telescope")
 			telescope.setup({

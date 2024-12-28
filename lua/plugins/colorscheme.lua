@@ -1,6 +1,6 @@
 return {
 
-	{ "neainas/everforest-nvim", lazy = false, priority = 1000 },
+	{ "sainnhe/everforest", lazy = false, priority = 1000 },
 	-- { "RRethy/base16-nvim" },
 	{
 		"scottmckendry/cyberdream.nvim",

@@ -16,6 +16,7 @@
   "conform.nvim": { "branch": "master", "commit": "7a3d99eb151e636670ce4842ab073d7485f7bc61" },
   "cyberdream.nvim": { "branch": "main", "commit": "731290012f435e06e4d5d64ed7c09cec49df2663" },
   "edge": { "branch": "master", "commit": "5b5a0683be0d9d8023a874ebf7e230095f4e1bae" },
+  "everforest": { "branch": "master", "commit": "730f9dd8ee698ad166d7abfca5dc06e90d4acf5b" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "fzf": { "branch": "master", "commit": "a6957aba117bac5139f6cd408f1bd1bb89183f8a" },
   "fzf.vim": { "branch": "master", "commit": "556f45e79ae5e3970054fee4c4373472604a1b4e" },

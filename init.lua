@@ -37,4 +37,4 @@ require("lspconfig").nixd.setup({
 })
 
 require("current-theme")
-vim.cmd("hi BufferLineFill guibg=transparent")
+-- vim.cmd("hi BufferLineFill guibg=transparent")

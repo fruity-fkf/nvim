@@ -7,7 +7,10 @@ I'm using lazy.nvim (honestly who isn't?) and most of the features are actually 
 
 ** Some important keybinds that are different from vanilla neovim are:
 
------
+
+*** Note: <Leader> here refers to the space key. You can view keybinds via pressing the space button. The which-key plugin will show the available keys and their uses.
+
+Here are some important keybinds to remember:
 
 |-----------------------+---------------------------------------------------------------------------------------|
 | Escape key            | also mapped to jj (use j then wait a sec and then press j again to type jj if needed) |

@@ -15,6 +15,7 @@
 local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
+vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 
 local split_sensibly = function()
   if vim.api.nvim_win_get_width(0) > math.floor(vim.api.nvim_win_get_height(0) * 2.3) then
@@ -30,7 +31,6 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
-vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 
 
 -- ╔══════════════════════════════╗

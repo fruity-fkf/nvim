@@ -1,0 +1,87 @@
+* Hoiiii :3 welcome to my nvim config.
+
+
+I'm using lazy.nvim (honestly who isn't?) and most of the features are actually from snacks.nvim by the great folke and mini.nvim which is honestly amazing.
+
+
+
+** Some important keybinds that are different from vanilla neovim are:
+
+-----
+
+|-----------------------+---------------------------------------------------------------------------------------|
+| Escape key            | also mapped to jj (use j then wait a sec and then press j again to type jj if needed) |
+| Ctrl + j              | to scroll snippets and in the completion window thingy                                |
+| Ctrl + k              | to scroll snippets and in the completion window thingy                                |
+| ctrl +.               | To select from the snippets/completion menu                                           |
+| ctrl + h              | navigate splts                                                                        |
+| ctrl + j              | navigate splts                                                                        |
+| ctrl + k              | navigate splts                                                                        |
+| ctrl + l              | navigate splts                                                                        |
+| Shift k (normal mode) | LSP hover functionality                                                               |
+| Tab                   | Move to the next field in snippets                                                    |
+| Shift + tab           | Move to the previous field in snippets                                                |
+| <leader><space>       | Smart Find Files                                                                      |
+| <leader>,             | Buffers                                                                               |
+| <leader>/             | Grep                                                                                  |
+| <leader>:             | Command History                                                                       |
+| <leader>n             | Notification History                                                                  |
+| <leader>e             | File Explorer                                                                         |
+| <leader>fb            | Buffers                                                                               |
+| <leader>fc            | Find Config File                                                                      |
+| <leader>ff            | Find Files                                                                            |
+| <leader>fg            | Find Git Files                                                                        |
+| <leader>fp            | Projects                                                                              |
+| <leader>fr            | Recent                                                                                |
+| <leader>gb            | Git Branches                                                                          |
+| <leader>gl            | Git Log                                                                               |
+| <leader>gL            | Git Log Line                                                                          |
+| <leader>gs            | Git Status                                                                            |
+| <leader>gS            | Git Stash                                                                             |
+| <leader>gd            | Git Diff (Hunks)                                                                      |
+| <leader>gf            | Git Log File                                                                          |
+| <leader>sb            | Buffer Lines                                                                          |
+| <leader>sB            | Grep Open Buffers                                                                     |
+| <leader>sg            | Grep                                                                                  |
+| <leader>sw            | Visual selection or word (Grep)                                                       |
+| <leader>s"            | Registers                                                                             |
+| <leader>s/            | Search History                                                                        |
+| <leader>sa            | Autocmds                                                                              |
+| <leader>sc            | Command History                                                                       |
+| <leader>sC            | Commands                                                                              |
+| <leader>sd            | Diagnostics                                                                           |
+| <leader>sD            | Buffer Diagnostics                                                                    |
+| <leader>sh            | Help Pages                                                                            |
+| <leader>sH            | Highlights                                                                            |
+| <leader>si            | Icons                                                                                 |
+| <leader>sj            | Jumps                                                                                 |
+| <leader>sk            | Keymaps                                                                               |
+| <leader>sl            | Location List                                                                         |
+| <leader>sm            | Marks                                                                                 |
+| <leader>sM            | Man Pages                                                                             |
+| <leader>sp            | Search for Plugin Spec                                                                |
+| <leader>sq            | Quickfix List                                                                         |
+| <leader>sR            | Resume                                                                                |
+| <leader>su            | Undo History                                                                          |
+| <leader>uC            | Colorschemes                                                                          |
+| gd                    | Goto Definition                                                                       |
+| gD                    | Goto Declaration                                                                      |
+| gr                    | References                                                                            |
+| gI                    | Goto Implementation                                                                   |
+| gy                    | Goto Type Definition                                                                  |
+| <leader>ss            | LSP Symbols                                                                           |
+| <leader>sS            | LSP Workspace Symbols                                                                 |
+| <leader>z             | Toggle Zen Mode                                                                       |
+| <leader>Z             | Toggle Zoom                                                                           |
+| <leader>.             | Toggle Scratch Buffer                                                                 |
+| <leader>S             | Select Scratch Buffer                                                                 |
+| <leader>bd            | Delete Buffer                                                                         |
+| <leader>cR            | Rename File                                                                           |
+| <leader>gB            | Git Browse                                                                            |
+| <leader>gg            | Lazygit                                                                               |
+| <leader>un            | Dismiss All Notifications                                                             |
+| <C-/>                 | Toggle Terminal                                                                       |
+| <C-_>                 | Ignore (whichkey)                                                                     |
+| ]]                    | Next Reference                                                                        |
+| [[                    | Previous Reference                                                                    |
+|-----------------------+---------------------------------------------------------------------------------------|

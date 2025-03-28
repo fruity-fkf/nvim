@@ -48,10 +48,10 @@ vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close Other Tabs" })
 vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" })         -- Go to next tab
 vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous Tab" }) -- Go to previous tab
 
-
-
-
-
+-- ╔══════════════════╗
+-- ║    UI Keymaps    ║
+-- ╚══════════════════╝
+-- Window Navigation
 
 keymap("n", "<leader>wl", "<cmd>wincmd l<cr>", { noremap = true, silent = true, desc = "Focus Left" })
 keymap("n", "<leader>wk", "<cmd>wincmd k<cr>", { noremap = true, silent = true, desc = "Focus Up" })
@@ -64,3 +64,26 @@ keymap("n", "<leader>wh", "<cmd>wincmd h<cr>", { noremap = true, silent = true, 
 -- keymap('n', '<S-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 keymap("n", "<leader>wq", "<cmd>wincmd q<cr>", { noremap = true, silent = true, desc = "Close Window" })
+
+-- ╔═══════════════════╗
+-- ║    LSP Keymaps    ║
+-- ╚═══════════════════╝
+
+keymap("n", "<leader>cd", function()
+  vim.lsp.buf.definition()
+end, { noremap = true, silent = true, desc = "Go To Definition" })
+keymap(
+  "n",
+  "<leader>cs",
+  "<cmd>Pick lsp scope='document_symbol'<cr>",
+  { noremap = true, silent = true, desc = "Show all Symbols" }
+)
+keymap("n", "<leader>cr", function()
+  vim.lsp.buf.rename()
+end, { noremap = true, silent = true, desc = "Rename This" })
+keymap("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, { noremap = true, silent = true, desc = "Code Actions" })
+
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+-- keymap("n", "<leader>la", function() vim.lsp.buf.code_action() end,{ noremap = true, silent = true, desc = '' })

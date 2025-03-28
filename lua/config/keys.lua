@@ -9,12 +9,6 @@
 --                 ||     ||
 --
 
-
-
-
-
-
-
 -- ╔══════════════════════════════╗
 -- ║    main initialization       ║
 -- ╚══════════════════════════════╝
@@ -48,13 +42,16 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
 
-keymap("n", "<leader>tn", function()
-  vim.lsp.buf.code_action()
-end, { noremap = true, silent = true, desc = "New Tab" })
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })           -- Open new tab
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" })       -- Close current tab
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close Other Tabs" }) -- Close all other tabs
+vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" })         -- Go to next tab
+vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous Tab" }) -- Go to previous tab
 
-keymap("n", "<leader>tc", function()
-  vim.lsp.buf.code_action()
-end, { noremap = true, silent = true, desc = "Close Tab" })
+
+
+
+
 
 keymap("n", "<leader>wl", "<cmd>wincmd l<cr>", { noremap = true, silent = true, desc = "Focus Left" })
 keymap("n", "<leader>wk", "<cmd>wincmd k<cr>", { noremap = true, silent = true, desc = "Focus Up" })

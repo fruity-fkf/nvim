@@ -5,8 +5,14 @@ I'm using lazy.nvim (honestly who isn't?) and most of the features are actually 
 
 ** LSP setup:
 Download the LSP you want with your package manager.
-And then put it in lua/plugins/lsp.lua
+And then set it up it in lua/plugins/lsp.lua
 
+** Formatting:
+
+Formatting works in two places.
+It tries using an external formatter. If that doesn't exist then it uses the LSP fomat function.
+To use external fomrmatters install them.
+And then set it up it in lua/plugins/formatting.lua
 
 ** Some important keybinds that are different from vanilla neovim are:
 

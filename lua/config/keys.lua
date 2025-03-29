@@ -18,11 +18,11 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 
 local split_sensibly = function()
-  if vim.api.nvim_win_get_width(0) > math.floor(vim.api.nvim_win_get_height(0) * 2.3) then
-    vim.cmd("vs")
-  else
-    vim.cmd("split")
-  end
+	if vim.api.nvim_win_get_width(0) > math.floor(vim.api.nvim_win_get_height(0) * 2.3) then
+		vim.cmd("vs")
+	else
+		vim.cmd("split")
+	end
 end
 
 -- Navigate vim panes better
@@ -30,8 +30,6 @@ vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
-
-
 
 -- ╔══════════════════════════════╗
 -- ║    Buffer and Tab Keymaps    ║
@@ -42,10 +40,10 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
 
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })           -- Open new tab
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" })       -- Close current tab
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" }) -- Open new tab
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" }) -- Close current tab
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close Other Tabs" }) -- Close all other tabs
-vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" })         -- Go to next tab
+vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" }) -- Go to next tab
 vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous Tab" }) -- Go to previous tab
 
 -- ╔══════════════════╗
@@ -70,19 +68,19 @@ keymap("n", "<leader>wq", "<cmd>wincmd q<cr>", { noremap = true, silent = true, 
 -- ╚═══════════════════╝
 
 keymap("n", "<leader>cd", function()
-  vim.lsp.buf.definition()
+	vim.lsp.buf.definition()
 end, { noremap = true, silent = true, desc = "Go To Definition" })
 keymap(
-  "n",
-  "<leader>cs",
-  "<cmd>Pick lsp scope='document_symbol'<cr>",
-  { noremap = true, silent = true, desc = "Show all Symbols" }
+	"n",
+	"<leader>cs",
+	"<cmd>Pick lsp scope='document_symbol'<cr>",
+	{ noremap = true, silent = true, desc = "Show all Symbols" }
 )
 keymap("n", "<leader>cr", function()
-  vim.lsp.buf.rename()
+	vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Rename This" })
 keymap("n", "<leader>ca", function()
-  vim.lsp.buf.code_action()
+	vim.lsp.buf.code_action()
 end, { noremap = true, silent = true, desc = "Code Actions" })
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

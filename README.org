@@ -3,6 +3,9 @@
 
 I'm using lazy.nvim (honestly who isn't?) and most of the features are actually from snacks.nvim by the great folke and mini.nvim which is honestly amazing.
 
+** LSP setup:
+Download the LSP you want with your package manager.
+And then put it in lua/plugins/lsp.lua
 
 
 ** Some important keybinds that are different from vanilla neovim are:

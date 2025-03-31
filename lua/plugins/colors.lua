@@ -1,23 +1,23 @@
 return {
 	--
+	-- {
+	-- 	"sainnhe/everforest",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
+	-- -- { "RRethy/base16-nvim" },
 	{
-		"sainnhe/everforest",
+		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
 	},
-	-- -- { "RRethy/base16-nvim" },
-	-- {
-	--   "scottmckendry/cyberdream.nvim",
-	--   lazy = false,
-	--   priority = 1000,
-	--   opts = {
-	--     transparent = true,
-	--     styles = {
-	--       sidebars = "transparent",
-	--       floats = "transparent",
-	--     },
-	--   },
-	-- },
 	--
 	-- { "sainnhe/edge" },
 	-- { "navarasu/onedark.nvim" },

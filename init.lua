@@ -4,5 +4,5 @@ require("config.keys")
 
 --COLORSCHEME
 
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme cyberdream")
 vim.diagnostic.config({ virtual_text = true })

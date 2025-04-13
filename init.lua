@@ -4,5 +4,5 @@ require("config.keys")
 
 --COLORSCHEME
 
-vim.cmd("colorscheme cyberdream")
+vim.cmd("colorscheme no-clown-fiesta")
 vim.diagnostic.config({ virtual_text = true })

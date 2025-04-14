@@ -3,14 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "saghen/blink.cmp",
-      {
-        "folke/lazydev.nvim",
-        opts = {
-          library = {
-            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-          },
-        },
-      },
     },
     config = function()
       local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -27,16 +19,6 @@ return {
           local c = vim.lsp.get_client_by_id(args.data.client_id)
           if not c then
             return
-          end
-
-          -- Only attach if the client supports formatting
-          if c.server_capabilities.documentFormattingProvider then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = args.buf,
-              callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = c.id })
-              end,
-            })
           end
         end,
       })

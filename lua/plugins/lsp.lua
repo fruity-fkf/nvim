@@ -20,6 +20,7 @@ return {
       require("lspconfig").lua_ls.setup({ capabilites = capabilities })
       require("lspconfig").clangd.setup({ capabilites = capabilities })
       require("lspconfig").pyright.setup({ capabilites = capabilities })
+      require("lspconfig").gopls.setup({ capabilites = capabilities })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
@@ -28,8 +29,8 @@ return {
             return
           end
 
-          if vim.bo.filetype == "lua" then
-            -- Format the current buffer on save
+          -- Only attach if the client supports formatting
+          if c.server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_autocmd("BufWritePre", {
               buffer = args.buf,
               callback = function()

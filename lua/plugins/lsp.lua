@@ -13,6 +13,7 @@ return {
       require("lspconfig").clangd.setup({ capabilites = capabilities })
       require("lspconfig").pyright.setup({ capabilites = capabilities })
       require("lspconfig").gopls.setup({ capabilites = capabilities })
+      require("lspconfig").ruby_lsp.setup({ capabilites = capabilities })
       -- Running rust lspconfig through rustaceanvim
       -- require("lspconfig").rust_analyzer.setup({ capabilites = capabilities })
 

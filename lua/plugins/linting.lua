@@ -14,7 +14,7 @@ return {
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
       python = { "pylint" },
-      go = { "golangci_lint" },
+      go = { "golangcilint" },
       c = { "clangtidy" },
       cpp = { "clangtidy" },
       zig = { "zigfmt" }, -- pseudo-linter using format check

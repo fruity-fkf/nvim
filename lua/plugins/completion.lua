@@ -1,12 +1,21 @@
 return {
   {
+    "saghen/blink.compat",
+    opts = {},
+  },
+
+  {
     "saghen/blink.cmp",
+    event = "InsertEnter",
     dependencies = {
       "rafamadriz/friendly-snippets",
       "echasnovski/mini.snippets",
+      "hrsh7th/cmp-emoji",
+      "chrisgrieser/cmp-nerdfont",
+      "mtoohey31/cmp-fish",
     },
-    version = "*",
 
+    version = "*",
     opts = {
       keymap = {
 
@@ -33,9 +42,31 @@ return {
         ["<Tab>"] = { "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
       },
+
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "emoji", "nerdfont", "fish" },
+        providers = {
+          emoji = {
+            name = "emoji",
+            module = "blink.compat.source",
+            score_offset = -3,
+            opts = {},
+          },
+          nerdfont = {
+            name = "nerdfont",
+            module = "blink.compat.source",
+            score_offset = -3,
+            opts = {},
+          },
+          fish = {
+            name = "fish",
+            module = "blink.compat.source",
+            score_offset = -3,
+            opts = {},
+          },
+        },
       },
+
       appearance = {
         use_nvim_cmp_as_default = true,
         nerd_font_variant = "normal",

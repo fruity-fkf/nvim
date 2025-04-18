@@ -1,0 +1,180 @@
+
+{
+  "Label": {
+    "prefix": "label",
+    "body": [
+      "_start:"
+    ],
+    "description": "Define a label"
+  },
+  "Hello World": {
+    "prefix": "hello_world",
+    "body": [
+      "section .data",
+      "    msg db 'Hello, World!', 0",
+      "",
+      "section .text",
+      "    global _start",
+      "_start:",
+      "    ; write message",
+      "    mov rax, 1          ; syscall number for sys_write",
+      "    mov rdi, 1          ; file descriptor 1 (stdout)",
+      "    mov rsi, msg        ; pointer to message",
+      "    mov rdx, 13         ; length of message",
+      "    syscall             ; make the syscall",
+      "",
+      "    ; exit program",
+      "    mov rax, 60         ; syscall number for sys_exit",
+      "    xor rdi, rdi        ; status code 0",
+      "    syscall             ; make the syscall"
+    ],
+    "description": "Hello World in Assembly"
+  },
+  "Function Prologue": {
+    "prefix": "func_prologue",
+    "body": [
+      "push rbp",
+      "mov rbp, rsp"
+    ],
+    "description": "Function prologue in x86_64"
+  },
+  "Function Epilogue": {
+    "prefix": "func_epilogue",
+    "body": [
+      "mov rsp, rbp",
+      "pop rbp",
+      "ret"
+    ],
+    "description": "Function epilogue in x86_64"
+  },
+  "Function Template": {
+    "prefix": "function_template",
+    "body": [
+      "${1:function_name}:",
+      "    push rbp",
+      "    mov rbp, rsp",
+      "    ",
+      "    ; function body",
+      "    ",
+      "    mov rsp, rbp",
+      "    pop rbp",
+      "    ret"
+    ],
+    "description": "Full function definition template"
+  },
+  "Exit Program": {
+    "prefix": "exit_program",
+    "body": [
+      "mov rax, 60    ; syscall number for sys_exit",
+      "xor rdi, rdi   ; exit status 0",
+      "syscall        ; call the kernel"
+    ],
+    "description": "Exit program (Linux x86_64)"
+  },
+  "Print Integer": {
+    "prefix": "print_int",
+    "body": [
+      "mov rsi, rbx    ; integer to print",
+      "mov rax, 1      ; syscall number for sys_write",
+      "mov rdi, 1      ; file descriptor (stdout)",
+      "mov rdx, 4      ; number of bytes to write",
+      "syscall         ; make syscall"
+    ],
+    "description": "Print integer to stdout"
+  },
+  "Print String": {
+    "prefix": "print_string",
+    "body": [
+      "mov rax, 1          ; syscall number for write",
+      "mov rdi, 1          ; file descriptor stdout",
+      "mov rsi, ${1:str}   ; string to write",
+      "mov rdx, ${2:len}   ; length of string",
+      "syscall"
+    ],
+    "description": "Print a string to stdout"
+  },
+  "Print Newline": {
+    "prefix": "print_newline",
+    "body": [
+      "mov rax, 1",
+      "mov rdi, 1",
+      "mov rsi, newline",
+      "mov rdx, 1",
+      "syscall"
+    ],
+    "description": "Print a newline character"
+  },
+  "Read Input": {
+    "prefix": "read_input",
+    "body": [
+      "mov rax, 0          ; syscall number for read",
+      "mov rdi, 0          ; file descriptor stdin",
+      "mov rsi, ${1:buffer} ; buffer",
+      "mov rdx, ${2:len}   ; number of bytes to read",
+      "syscall"
+    ],
+    "description": "Read input from stdin"
+  },
+  "Simple Loop": {
+    "prefix": "simple_loop",
+    "body": [
+      "mov rax, 10       ; initialize counter",
+      "loop_start:",
+      "    dec rax        ; decrement counter",
+      "    jnz loop_start ; jump if not zero"
+    ],
+    "description": "Simple decrementing loop"
+  },
+  "Reverse Loop (mem)": {
+    "prefix": "reverse_loop",
+    "body": [
+      "mov rcx, ${1:count}",
+      "${2:loop_label}:",
+      "    ; do work",
+      "    dec rcx",
+      "    jnz ${2:loop_label}"
+    ],
+    "description": "Loop using memory-stored counter"
+  },
+  "Syscall Wrapper": {
+    "prefix": "syscall_wrapper",
+    "body": [
+      "mov rax, ${1:syscall_number}",
+      "mov rdi, ${2:arg1}",
+      "mov rsi, ${3:arg2}",
+      "mov rdx, ${4:arg3}",
+      "mov r10, ${5:arg4}",
+      "mov r8, ${6:arg5}",
+      "mov r9, ${7:arg6}",
+      "syscall"
+    ],
+    "description": "Generic syscall wrapper"
+  },
+  "Comparison and Jump": {
+    "prefix": "cmp_jump",
+    "body": [
+      "cmp ${1:rax}, ${2:rbx}",
+      "je ${3:equal_label}",
+      "jne ${4:not_equal_label}",
+      "jl ${5:less_label}",
+      "jg ${6:greater_label}"
+    ],
+    "description": "Compare two values and jump based on condition"
+  },
+  "Push Example": {
+    "prefix": "push_example",
+    "body": [
+      "push rbx",
+      "push rax"
+    ],
+    "description": "Push registers onto the stack"
+  },
+  "Pop Example": {
+    "prefix": "pop_example",
+    "body": [
+      "pop rax",
+      "pop rbx"
+    ],
+    "description": "Pop registers from the stack"
+  }
+}

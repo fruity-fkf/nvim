@@ -10,6 +10,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       "hrsh7th/cmp-emoji",
+      "echasnovski/mini.snippets",
       "chrisgrieser/cmp-nerdfont",
       "mtoohey31/cmp-fish",
     },

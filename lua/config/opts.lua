@@ -18,3 +18,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.wo.relativenumber = true
 
 vim.wo.number = true
+vim.filetype.add({
+  extension = {
+    s = "asm",
+    S = "asm",
+    asm = "asm",
+  },
+})

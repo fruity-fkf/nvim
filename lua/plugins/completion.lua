@@ -9,7 +9,6 @@ return {
     event = "InsertEnter",
     dependencies = {
       "rafamadriz/friendly-snippets",
-      "echasnovski/mini.snippets",
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
       "mtoohey31/cmp-fish",
@@ -46,6 +45,7 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "emoji", "nerdfont", "fish" },
         providers = {
+
           emoji = {
             name = "emoji",
             module = "blink.compat.source",

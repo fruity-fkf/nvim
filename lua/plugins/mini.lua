@@ -14,6 +14,17 @@ return {
       require("mini.comment").setup()
       require("mini.basics").setup()
       require("mini.icons").setup()
+      local gen_loader = require("mini.snippets").gen_loader
+
+      require("mini.snippets").setup({
+        snippets = {
+          gen_loader.from_lang(),
+          c = require("snippets.c"),
+          cpp = require("snippets.c"),
+          asm = require("snippets.asm"),
+          python = require("snippets.python"),
+        },
+      })
     end,
   },
 }

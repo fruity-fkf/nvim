@@ -14,6 +14,30 @@ return {
       require("lspconfig").pyright.setup({ capabilites = capabilities })
       require("lspconfig").gopls.setup({ capabilites = capabilities })
       require("lspconfig").solargraph.setup({ capabilites = capabilities })
+
+      require("lspconfig").emmet_ls.setup({
+        capabilities = capabilities,
+        filetypes = {
+          "html",
+          "css",
+          "javascriptreact",
+          "typescriptreact",
+          "vue",
+          "svelte",
+          "xml",
+          "xsl",
+          "php",
+          "blade",
+        },
+        init_options = {
+          html = {
+            options = {
+              ["bem.enabled"] = true,
+            },
+          },
+        },
+      })
+
       -- Running rust lspconfig through rustaceanvim
       -- require("lspconfig").rust_analyzer.setup({ capabilites = capabilities })
 

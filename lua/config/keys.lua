@@ -40,10 +40,10 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", { silent = true, desc = "Next Buffer" })
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Previous Buffer" })
 keymap("n", "<TAB>", "<C-^>", { noremap = true, silent = true, desc = "Alternate buffers" })
 
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" }) -- Open new tab
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" }) -- Close current tab
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })           -- Open new tab
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" })       -- Close current tab
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close Other Tabs" }) -- Close all other tabs
-vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" }) -- Go to next tab
+vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next Tab" })         -- Go to next tab
 vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous Tab" }) -- Go to previous tab
 
 -- ╔══════════════════╗
@@ -63,6 +63,10 @@ keymap("n", "<leader>wh", "<cmd>wincmd h<cr>", { noremap = true, silent = true, 
 
 keymap("n", "<leader>wq", "<cmd>wincmd q<cr>", { noremap = true, silent = true, desc = "Close Window" })
 
+
+keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", { noremap = true, silent = true, desc = "File Explorer (neotree)" })
+
+
 -- ╔═══════════════════╗
 -- ║    LSP Keymaps    ║
 -- ╚═══════════════════╝
@@ -70,7 +74,8 @@ keymap("n", "<leader>wq", "<cmd>wincmd q<cr>", { noremap = true, silent = true, 
 keymap("n", "<leader>cd", function()
   vim.lsp.buf.definition()
 end, { noremap = true, silent = true, desc = "Go To Definition" })
-keymap("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>", { noremap = true, silent = true, desc = "Show all Symbols" })
+keymap("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>",
+  { noremap = true, silent = true, desc = "Show all Symbols" })
 keymap("n", "<leader>cr", function()
   vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Rename This" })

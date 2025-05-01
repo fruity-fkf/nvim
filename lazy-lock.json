@@ -13,6 +13,7 @@
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mini.nvim": { "branch": "main", "commit": "90ab64f944a5a63a9efebe6735e1f2c6d4db3613" },
   "mini.snippets": { "branch": "main", "commit": "d005684e620e76eb2a5fbbbd211a1eba7212b4aa" },
+  "neo-tree.nvim": { "branch": "v3.x", "commit": "1ef260eb4f54515fe121a2267b477efb054d108a" },
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "2f57d1115e246b62a1a81bba806fe79aaa53b610" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "nui.nvim": { "branch": "main", "commit": "8d5b0b568517935d3c84f257f272ef004d9f5a59" },

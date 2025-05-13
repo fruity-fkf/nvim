@@ -70,11 +70,12 @@ return {
 
       appearance = {
         use_nvim_cmp_as_default = true,
-        nerd_font_variant = "normal",
+        nerd_font_variant = "mono",
       },
       signature = { enabled = true },
       -- Moved completion inside opts
       completion = {
+        menu = { border = "double" },
         ghost_text = {
           enabled = true,
         },
@@ -82,7 +83,7 @@ return {
           auto_show_delay_ms = 0,
           auto_show = true,
           window = {
-            border = "",
+            border = "double",
           },
         },
       },

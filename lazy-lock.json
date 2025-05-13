@@ -9,6 +9,7 @@
   "cyberdream.nvim": { "branch": "main", "commit": "4aa7c64b0b18a542d6587632efa93c3bea469979" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "gruvbox-material": { "branch": "master", "commit": "f5f912fbc7cf2d45da6928b792d554f85c7aa89a" },
+  "horizon.nvim": { "branch": "main", "commit": "b4d7b1e7c3aa77aea31b9ced8960e49fd8682c47" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mini.nvim": { "branch": "main", "commit": "90ab64f944a5a63a9efebe6735e1f2c6d4db3613" },
   "mini.snippets": { "branch": "main", "commit": "e05106957fc178285dbc510ff833985da59d3e5a" },

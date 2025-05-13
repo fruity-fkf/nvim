@@ -6,6 +6,8 @@ return {
   -- 	priority = 1000,
   -- },
   -- -- { "RRethy/base16-nvim" },
+
+  { "akinsho/horizon.nvim", lazy = false },
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,

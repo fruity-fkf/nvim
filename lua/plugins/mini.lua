@@ -14,6 +14,7 @@ return {
       require("mini.comment").setup()
       require("mini.basics").setup()
       require("mini.icons").setup()
+      require("mini.files").setup()
     end,
   },
 }

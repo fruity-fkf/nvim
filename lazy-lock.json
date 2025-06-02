@@ -2,6 +2,7 @@
   "assembly-cheatsheet.vim": { "branch": "main", "commit": "c903d0927b0f40159ad54d1cbe2f2e14d0e355b7" },
   "blink.cmp": { "branch": "main", "commit": "022521a8910a5543b0251b21c9e1a1e989745796" },
   "blink.compat": { "branch": "main", "commit": "1454f14a8d855a578ceeba77c62538fa1459a67c" },
+  "catppuccin": { "branch": "main", "commit": "a0c769bc7cd04bbbf258b3d5f01e2bdce744108d" },
   "cmp-emoji": { "branch": "main", "commit": "e8398e2adf512a03bb4e1728ca017ffeac670a9f" },
   "cmp-fish": { "branch": "main", "commit": "3a23492e2aead05522a9887ec685d70e8c987323" },
   "cmp-nerdfont": { "branch": "main", "commit": "e97482344ebed29093015a18c155057adf5c842b" },
